@@ -20,8 +20,79 @@
     </nav>
 
     <main>
-      <h1>Контакты</h1>
-      <p>Здесь будет форма обратной связи и реквизиты компании.</p>
+      <div class="container">
+
+        <section class="contact">
+          <h2 class="contact__title">Форма обратной связи</h2>
+
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="contact-form__grid">
+              <label class="contact-form__field">
+                <span class="contact-form__label">Имя</span>
+                <input
+                  class="contact-form__input"
+                  id="contactName"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  required
+                  minlength="2"
+                />
+                <div
+                  class="contact-form__error"
+                  id="contactNameError"
+                  aria-live="polite"
+                ></div>
+              </label>
+
+              <label class="contact-form__field">
+                <span class="contact-form__label">Телефон</span>
+                <input
+                  class="contact-form__input"
+                  id="contactPhone"
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  inputmode="tel"
+                  required
+                />
+                <div
+                  class="contact-form__error"
+                  id="contactPhoneError"
+                  aria-live="polite"
+                ></div>
+              </label>
+
+              <label class="contact-form__field contact-form__field--full">
+                <span class="contact-form__label">Сообщение</span>
+                <textarea
+                  class="contact-form__textarea"
+                  id="contactMessage"
+                  name="message"
+                  rows="5"
+                  required
+                  minlength="10"
+                ></textarea>
+                <div
+                  class="contact-form__error"
+                  id="contactMessageError"
+                  aria-live="polite"
+                ></div>
+              </label>
+            </div>
+
+            <div class="contact-form__footer">
+              <button class="btn btn--primary" type="submit">Отправить</button>
+              <p
+                class="contact-form__status"
+                id="contactFormStatus"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </div>
+          </form>
+        </section>
+      </div>
     </main>
 
     <div data-include="components/footer.html"></div>
