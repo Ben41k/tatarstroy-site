@@ -86,14 +86,22 @@ header {
   backdrop-filter: blur(10px);
   background: rgba(7, 7, 8, 0.72);
   border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 header > a,
 footer > a {
-  display: block;
+  position: absolute;
+  left: max(20px, calc((100% - var(--container)) / 2 + 20px));
+  top: 50%;
+  transform: translateY(-50%);
   padding: 16px 20px;
-  max-width: var(--container);
-  margin: 0 auto;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
 }
 
 header strong,
@@ -117,12 +125,16 @@ footer strong::after {
 }
 
 nav {
-  /* Разделители ставятся у `header`/`footer`, меню внутри них не требует отдельной линии. */
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 nav > ul {
   list-style: none;
-  padding: 12px 0;
+  padding: 0;
   margin: 0;
   display: flex;
   justify-content: center;
@@ -467,6 +479,10 @@ footer {
   padding: 22px 0;
   color: var(--muted);
   text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 footer p {
@@ -494,7 +510,6 @@ footer p {
   }
 
   nav > ul {
-    padding: 10px 0;
     gap: 10px;
   }
 
