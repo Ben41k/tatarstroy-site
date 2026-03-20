@@ -18,9 +18,58 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // Обновляем год в футере (id="year" находится внутри компонента footer.html)
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  // Подсвечиваем текущую страницу в меню (работает и для header, и для footer)
+  const navLinks = Array.from(document.querySelectorAll('nav a[href]'));
+  if (navLinks.length) {
+    const normalizePathPart = (v) => {
+      if (!v) return '';
+      let s = String(v);
+      try {
+        s = decodeURIComponent(s);
+      } catch {
+        // Игнорируем ошибки декодирования
+      }
+
+      // Убираем query/hash, если они окажутся в href.
+      s = s.split('#')[0].split('?')[0];
+      if (s.endsWith('/')) s = s.slice(0, -1);
+      return s.split('/').pop();
+    };
+
+    const currentPath = normalizePathPart(window.location.pathname);
+    const currentHref = window.location.href;
+
+    for (const a of navLinks) a.removeAttribute('aria-current');
+
+    const matchesCurrent = (aHref) => {
+      const linkPart = normalizePathPart(aHref);
+      if (!linkPart) return false;
+      if (currentPath && currentPath === linkPart) return true;
+
+      // На некоторых окружениях `pathname` может отличаться, поэтому делаем запасной матч по концу URL.
+      if (currentHref && (currentHref.endsWith(aHref) || currentHref.endsWith('/' + aHref))) return true;
+      return false;
+    };
+
+    let matched = false;
+    for (const a of navLinks) {
+      const href = a.getAttribute('href');
+      if (matchesCurrent(href)) {
+        a.setAttribute('aria-current', 'page');
+        matched = true;
+      }
+    }
+
+    // Фоллбек: если совпадение не найдено, считаем, что открыта главная.
+    if (!matched) {
+      for (const a of navLinks) {
+        if (a.getAttribute('href') === 'index.html') {
+          a.setAttribute('aria-current', 'page');
+          break;
+        }
+      }
+    }
+  }
 
   // ====== Contact form (валидация) ======
   const form = document.getElementById('contactForm');

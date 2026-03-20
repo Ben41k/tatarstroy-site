@@ -88,20 +88,23 @@ header {
   border-bottom: 1px solid var(--border);
 }
 
-header > a {
+header > a,
+footer > a {
   display: block;
   padding: 16px 20px;
   max-width: var(--container);
   margin: 0 auto;
 }
 
-header strong {
+header strong,
+footer strong {
   font-size: 1.05rem;
   letter-spacing: 0.2px;
   position: relative;
 }
 
-header strong::after {
+header strong::after,
+footer strong::after {
   content: "";
   position: absolute;
   left: 0;
@@ -114,7 +117,7 @@ header strong::after {
 }
 
 nav {
-  border-bottom: 1px solid var(--border);
+  /* Разделители ставятся у `header`/`footer`, меню внутри них не требует отдельной линии. */
 }
 
 nav > ul {
