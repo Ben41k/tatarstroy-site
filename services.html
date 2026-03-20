@@ -20,8 +20,145 @@
     </nav>
 
     <main>
-      <h1>Услуги</h1>
-      <p>Здесь будет информация об услугах компании.</p>
+      <section class="services section" aria-labelledby="services-heading">
+        <div class="container">
+          <h2 id="services-heading" class="services__title">
+            Наши услуги
+          </h2>
+
+          <div class="services__grid" role="list">
+            <article class="service-card" role="listitem">
+              <div class="service-card__icon" aria-hidden="true">
+                <!-- Иконка: дом -->
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M3 10.5L12 3l9 7.5v10a1.5 1.5 0 0 1-1.5 1.5H4.5A1.5 1.5 0 0 1 3 20.5v-10Z"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M9.2 22v-7.2c0-.9.7-1.6 1.6-1.6h2.4c.9 0 1.6.7 1.6 1.6V22"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <h3 class="service-card__title">Строительство домов</h3>
+              <p class="service-card__text">
+                От проекта до сдачи: надежные материалы, аккуратная работа и контроль качества на каждом этапе.
+              </p>
+            </article>
+
+            <article class="service-card" role="listitem">
+              <div class="service-card__icon" aria-hidden="true">
+                <!-- Иконка: ремонт -->
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.7 6.3 17.7 3.3a2 2 0 0 1 2.8 2.8l-3 3"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M13 8 3 18a2 2 0 0 0 0 2.8A2 2 0 0 0 5.8 21L15 12"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M11.5 10.5 7 6.9"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M16.8 11.2 20.6 15"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <h3 class="service-card__title">Ремонт квартир</h3>
+              <p class="service-card__text">
+                Косметический и капитальный ремонт с выравниванием, электрикой и финишной отделкой под ключ.
+              </p>
+            </article>
+
+            <article class="service-card" role="listitem">
+              <div class="service-card__icon" aria-hidden="true">
+                <!-- Иконка: коммерческое строительство -->
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6 21V4.6A1.6 1.6 0 0 1 7.6 3H16.4A1.6 1.6 0 0 1 18 4.6V21"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M3 21h18"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M8 7h3M13 7h3M8 11h3M13 11h3M8 15h3M13 15h3"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <h3 class="service-card__title">Коммерческое строительство</h3>
+              <p class="service-card__text">
+                Строим и реконструируем объекты для бизнеса: офисы, торговые площади и инфраструктуру.
+              </p>
+            </article>
+
+            <article class="service-card" role="listitem">
+              <div class="service-card__icon" aria-hidden="true">
+                <!-- Иконка: проектирование -->
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M4 20 20 4"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M14 4h6v6"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M6 18l-2 2"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M8.5 15.5 6 13"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <h3 class="service-card__title">Проектирование</h3>
+              <p class="service-card__text">
+                Помогаем с планировкой и инженерными решениями: от эскиза до рабочей документации.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
 
     <div data-include="components/footer.html"></div>

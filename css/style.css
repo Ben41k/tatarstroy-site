@@ -166,6 +166,68 @@ main p {
   max-width: 72ch;
 }
 
+/* ====== Services ====== */
+.services {
+  border-top: 1px solid var(--border);
+}
+
+.services__title {
+  margin: 0 0 18px 0;
+  font-size: var(--fs-1);
+  letter-spacing: -0.02em;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+  transition: 180ms ease;
+}
+
+.service-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 196, 0, 0.4);
+  background: rgba(245, 196, 0, 0.08);
+}
+
+.service-card__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-yellow-2);
+  border: 1px solid rgba(245, 196, 0, 0.35);
+  background: rgba(245, 196, 0, 0.10);
+  margin-bottom: 12px;
+}
+
+.service-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.service-card__title {
+  margin: 0 0 10px 0;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.service-card__text {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
 /* ====== Buttons (используются для CTA) ====== */
 .btn {
   display: inline-flex;
@@ -342,6 +404,10 @@ footer p {
   .hero__inner {
     grid-template-columns: 1fr;
   }
+
+  .services__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 520px) {
@@ -360,5 +426,10 @@ footer p {
 
   .hero__card {
     padding: 14px;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
