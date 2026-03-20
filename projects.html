@@ -20,8 +20,116 @@
     </nav>
 
     <main>
-      <h1>Проекты</h1>
-      <p>Здесь будет список проектов и примеры выполненных работ.</p>
+      <section class="projects section" aria-labelledby="projects-heading">
+        <div class="container">
+          <h2 id="projects-heading" class="projects__title">
+            Наши проекты
+          </h2>
+
+          <p class="projects__lead">
+            Примеры выполненных работ: от строительства и ремонта до благоустройства и инженерных
+            систем.
+          </p>
+
+          <div class="projects__grid" role="list">
+            <article class="project-card" role="listitem">
+              <div class="project-card__media">
+                <img
+                  src="images/project-1.webp"
+                  alt="Строительство частного дома"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__body">
+                <h3 class="project-card__title">Строительство частного дома</h3>
+                <p class="project-card__text">
+                  Полный цикл работ: фундамент, стены, кровля и подготовка под чистовую отделку.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card" role="listitem">
+              <div class="project-card__media">
+                <img
+                  src="images/project-2.webp"
+                  alt="Фасадные системы"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__body">
+                <h3 class="project-card__title">Фасадные системы</h3>
+                <p class="project-card__text">
+                  Утепление и монтаж фасадных панелей с аккуратными узлами и герметичностью.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card" role="listitem">
+              <div class="project-card__media">
+                <img
+                  src="images/project-3.webp"
+                  alt="Ландшафтный дизайн"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__body">
+                <h3 class="project-card__title">Ландшафтный дизайн</h3>
+                <p class="project-card__text">
+                  Дорожки, газон и посадки для ухоженного участка с гармоничным цветовым решением.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card" role="listitem">
+              <div class="project-card__media">
+                <img
+                  src="images/project-4.webp"
+                  alt="Монтаж забора"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__body">
+                <h3 class="project-card__title">Монтаж забора</h3>
+                <p class="project-card__text">
+                  Установка столбов, выравнивание секций и надежный крепеж для долгой службы.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card" role="listitem">
+              <div class="project-card__media">
+                <img
+                  src="images/project-5.webp"
+                  alt="Реконструкция дома"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__body">
+                <h3 class="project-card__title">Реконструкция дома</h3>
+                <p class="project-card__text">
+                  Ремонт фасада и подготовка к обновлению отделки: леса, демонтаж и восстановление.
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card" role="listitem">
+              <div class="project-card__media">
+                <img
+                  src="images/project-6.webp"
+                  alt="Инженерные сети"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__body">
+                <h3 class="project-card__title">Инженерные сети</h3>
+                <p class="project-card__text">
+                  Монтаж труб, кабелей и элементов инженерной инфраструктуры с соблюдением уклонов.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
 
     <div data-include="components/footer.html"></div>
