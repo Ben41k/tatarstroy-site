@@ -1,1 +1,364 @@
+/* ====== Бренд и базовые переменные ====== */
+:root {
+  --brand-yellow: #f5c400;
+  --brand-yellow-2: #ffd84d;
+  --brand-black: #0b0b0c;
+  --brand-white: #ffffff;
 
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.7);
+  --muted-2: rgba(255, 255, 255, 0.55);
+
+  --bg: #070708;
+  --surface: rgba(255, 255, 255, 0.06);
+  --surface-2: rgba(255, 255, 255, 0.09);
+
+  --border: rgba(255, 255, 255, 0.12);
+  --shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  --container: 1160px;
+
+  /* Плавные размеры */
+  --fs-1: clamp(1.25rem, 2.2vw, 1.6rem);
+  --fs-2: clamp(1.6rem, 3.2vw, 2.35rem);
+  --fs-3: clamp(2.1rem, 5vw, 3.25rem);
+}
+
+/* ====== Reset / базовая типографика ====== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans",
+    "Liberation Sans", sans-serif;
+  background: radial-gradient(1000px 600px at 20% -10%, rgba(245, 196, 0, 0.25), transparent 60%),
+    radial-gradient(900px 550px at 100% 0%, rgba(255, 216, 77, 0.13), transparent 55%),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Фокус для клавиатуры */
+:focus-visible {
+  outline: 3px solid rgba(245, 196, 0, 0.6);
+  outline-offset: 3px;
+}
+
+/* ====== Контейнер и секции ====== */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: clamp(36px, 5vw, 64px) 0;
+}
+
+/* ====== Header / Navigation ====== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+  background: rgba(7, 7, 8, 0.72);
+  border-bottom: 1px solid var(--border);
+}
+
+header > a {
+  display: block;
+  padding: 16px 20px;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+header strong {
+  font-size: 1.05rem;
+  letter-spacing: 0.2px;
+  position: relative;
+}
+
+header strong::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 56px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--brand-yellow), transparent);
+  opacity: 0.95;
+}
+
+nav {
+  border-bottom: 1px solid var(--border);
+}
+
+nav > ul {
+  list-style: none;
+  padding: 12px 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  color: var(--muted);
+  transition: 160ms ease;
+}
+
+nav a:hover {
+  color: var(--text);
+  border-color: rgba(245, 196, 0, 0.35);
+  background: rgba(245, 196, 0, 0.08);
+}
+
+nav a[aria-current="page"] {
+  color: var(--brand-white);
+  background: rgba(245, 196, 0, 0.14);
+  border-color: rgba(245, 196, 0, 0.45);
+}
+
+/* ====== Главный контент (и текущая разметка страниц) ====== */
+main {
+  padding: clamp(34px, 5vw, 60px) 0;
+}
+
+main h1 {
+  margin: 0 0 14px 0;
+  font-size: var(--fs-2);
+  letter-spacing: -0.02em;
+}
+
+main p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 72ch;
+}
+
+/* ====== Buttons (используются для CTA) ====== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  transition: 180ms ease;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(245, 196, 0, 0.48);
+  background: rgba(245, 196, 0, 0.1);
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, rgba(245, 196, 0, 0.95), rgba(255, 216, 77, 0.86));
+  border-color: rgba(245, 196, 0, 0.65);
+  color: #141414;
+  box-shadow: 0 12px 30px rgba(245, 196, 0, 0.22);
+}
+
+.btn--primary:hover {
+  background: linear-gradient(135deg, rgba(255, 216, 77, 0.95), rgba(245, 196, 0, 0.9));
+  box-shadow: 0 16px 38px rgba(245, 196, 0, 0.3);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ====== Hero-блок (для главной страницы) ====== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  padding: clamp(42px, 7vw, 86px) 0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background:
+    radial-gradient(900px 460px at 15% 0%, rgba(245, 196, 0, 0.35), transparent 60%),
+    radial-gradient(780px 420px at 95% 10%, rgba(255, 216, 77, 0.16), transparent 55%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 55%);
+  z-index: 0;
+}
+
+/* Подложка под “строй-графику”: диагональный шум/линии */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: -80px;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0px,
+    rgba(255, 255, 255, 0.08) 2px,
+    transparent 2px,
+    transparent 14px
+  );
+  opacity: 0.2;
+  transform: rotate(-8deg);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 26px;
+  align-items: center;
+  grid-template-columns: 1.25fr 0.75fr;
+}
+
+.hero__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 196, 0, 0.35);
+  background: rgba(245, 196, 0, 0.1);
+  color: var(--brand-yellow-2);
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.hero__title {
+  margin: 14px 0 12px 0;
+  font-size: var(--fs-3);
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+}
+
+.hero__title span {
+  color: var(--brand-yellow-2);
+}
+
+.hero__subtitle {
+  margin: 0 0 20px 0;
+  color: var(--muted);
+  font-size: var(--fs-1);
+  max-width: 60ch;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero__card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.hero__card h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.05rem;
+}
+
+.hero__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.hero__item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: var(--muted);
+}
+
+.hero__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--brand-yellow);
+  margin-top: 6px;
+  box-shadow: 0 0 0 4px rgba(245, 196, 0, 0.12);
+}
+
+/* ====== Footer ====== */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 22px 0;
+  color: var(--muted);
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ====== Адаптивность ====== */
+@media (max-width: 920px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  header > a {
+    padding: 14px 16px;
+  }
+
+  nav > ul {
+    padding: 10px 0;
+    gap: 10px;
+  }
+
+  nav a {
+    padding: 9px 10px;
+  }
+
+  .hero__card {
+    padding: 14px;
+  }
+}
