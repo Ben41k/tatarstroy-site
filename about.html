@@ -10,8 +10,197 @@
     <div data-include="components/header.html"></div>
 
     <main>
-      <h1>О компании</h1>
-      <p>Здесь будет краткая информация о компании, ценностях и опыте.</p>
+      <div class="container">
+        <h1>О компании</h1>
+        <p>
+          «Татарстрой» — строительная компания с командой инженеров и
+          мастеров, которая выполняет работы под ключ: от подготовки
+          проектных решений и согласования этапов до сдачи объекта и
+          сопровождения по гарантии.
+        </p>
+      </div>
+
+      <section class="services section" aria-labelledby="about-history-heading">
+        <div class="container">
+          <h2 id="about-history-heading" class="services__title">
+            История компании
+          </h2>
+
+          <div class="hero__card">
+            <p class="projects__lead">
+              Мы росли постепенно: сначала усиливали бригады и оттачивали
+              производственный процесс, а затем собрали собственную систему
+              контроля качества и управления сроками.
+            </p>
+
+            <ul class="hero__list" aria-label="Ключевые этапы развития">
+              <li class="hero__item">
+                <span class="hero__dot" aria-hidden="true"></span>
+                <span>Старт с частных объектов и закрепление стандартов работы на площадке.</span>
+              </li>
+              <li class="hero__item">
+                <span class="hero__dot" aria-hidden="true"></span>
+                <span>Формирование профильных ролей: ПТО, сметный контроль и прорабский контроль.</span>
+              </li>
+              <li class="hero__item">
+                <span class="hero__dot" aria-hidden="true"></span>
+                <span>Внедрение этапных проверок: материалы, геометрия, исполнение узлов.</span>
+              </li>
+              <li class="hero__item">
+                <span class="hero__dot" aria-hidden="true"></span>
+                <span>Расширение компетенций: ремонт, инженерные системы и благоустройство.</span>
+              </li>
+              <li class="hero__item">
+                <span class="hero__dot" aria-hidden="true"></span>
+                <span>Сохранение подхода «под ключ» и ориентации на понятный результат для заказчика.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="services section" aria-labelledby="about-advantages-heading">
+        <div class="container">
+          <h2 id="about-advantages-heading" class="services__title">
+            Преимущества
+          </h2>
+
+          <div class="services__grid" role="list">
+            <article class="service-card" role="listitem">
+              <div class="service-card__icon" aria-hidden="true">
+                <!-- Иконка: договор -->
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8" />
+                  <path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h3 class="service-card__title">Работа по договору</h3>
+              <p class="service-card__text">Четко фиксируем объем работ, этапы и ответственность сторон.</p>
+            </article>
+
+            <article class="service-card" role="listitem">
+              <div class="service-card__icon" aria-hidden="true">
+                <!-- Иконка: календарь -->
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 3v3M17 3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  <path d="M4.5 8.2A2.2 2.2 0 0 1 6.7 6h10.6a2.2 2.2 0 0 1 2.2 2.2V19a2.5 2.5 0 0 1-2.5 2.5H7A2.5 2.5 0 0 1 4.5 19V8.2Z" stroke="currentColor" stroke-width="1.8" />
+                  <path d="M7.2 11h9.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  <path d="M8.2 14.5h3.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h3 class="service-card__title">Соблюдаем сроки</h3>
+              <p class="service-card__text">Планируем график работ и контролируем его на каждом этапе.</p>
+            </article>
+
+            <article class="service-card" role="listitem">
+              <div class="service-card__icon" aria-hidden="true">
+                <!-- Иконка: щит -->
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2 20 6v7c0 5-3.3 9-8 9s-8-4-8-9V6l8-4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                  <path d="m9 12 2 2 4-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3 class="service-card__title">Контроль качества</h3>
+              <p class="service-card__text">Проверяем геометрию, материалы и исполнение узлов до скрытия работ.</p>
+            </article>
+
+            <article class="service-card" role="listitem">
+              <div class="service-card__icon" aria-hidden="true">
+                <!-- Иконка: чек-лист -->
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 6h12M9 12h12M9 18h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  <path d="M4 6.5 5.2 7.7 7.4 5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M4 12.5 5.2 13.7 7.4 11.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M4 18.5 5.2 19.7 7.4 17.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3 class="service-card__title">Прозрачная смета</h3>
+              <p class="service-card__text">Формируем расчеты и согласуем изменения, если меняются условия.</p>
+            </article>
+
+            <article class="service-card" role="listitem">
+              <div class="service-card__icon" aria-hidden="true">
+                <!-- Иконка: дом с отверткой (условно) -->
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 8 6 16l2 2 8-8-2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                  <path d="M15.5 6.5 18 4l2 2-2.5 2.5-2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                  <path d="M6 18.5V21h2.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3 class="service-card__title">Проверенные материалы</h3>
+              <p class="service-card__text">Помогаем выбрать материалы и контролируем их качество при приемке.</p>
+            </article>
+
+            <article class="service-card" role="listitem">
+              <div class="service-card__icon" aria-hidden="true">
+                <!-- Иконка: связь -->
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 21a8 8 0 1 0-8-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  <path d="M4 13v4h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M8.2 9.8c.9-1.5 2.2-2.3 3.8-2.3 2.7 0 4 2 4 4.1 0 2.3-1.4 3.6-3.2 4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h3 class="service-card__title">Открытое взаимодействие</h3>
+              <p class="service-card__text">Регулярно сообщаем о ходе работ и согласуем решения по месту.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="services section" aria-labelledby="about-team-heading">
+        <div class="container">
+          <h2 id="about-team-heading" class="services__title">
+            Команда
+          </h2>
+
+          <div class="services__grid" role="list">
+            <article class="service-card" role="listitem">
+              <div class="service-card__icon" aria-hidden="true">
+                <!-- Иконка: человек -->
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 21a8 8 0 0 0-16 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  <path d="M12 13a5 5 0 1 0-5-5 5 5 0 0 0 5 5Z" stroke="currentColor" stroke-width="1.8" />
+                </svg>
+              </div>
+              <h3 class="service-card__title">Руководитель проектов</h3>
+              <p class="service-card__text">Ведет график, бюджет и коммуникации, чтобы вы получали результат без лишней неопределенности.</p>
+            </article>
+
+            <article class="service-card" role="listitem">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 21a8 8 0 0 0-16 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  <path d="M12 13a5 5 0 1 0-5-5 5 5 0 0 0 5 5Z" stroke="currentColor" stroke-width="1.8" />
+                </svg>
+              </div>
+              <h3 class="service-card__title">Инженер ПТО</h3>
+              <p class="service-card__text">Готовит техническую документацию, контролирует соответствие работ проекту и нормам.</p>
+            </article>
+
+            <article class="service-card" role="listitem">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 21a8 8 0 0 0-16 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  <path d="M12 13a5 5 0 1 0-5-5 5 5 0 0 0 5 5Z" stroke="currentColor" stroke-width="1.8" />
+                </svg>
+              </div>
+              <h3 class="service-card__title">Сметчик</h3>
+              <p class="service-card__text">Формирует расчеты, уточняет объемы и помогает оптимизировать стоимость без потери качества.</p>
+            </article>
+
+            <article class="service-card" role="listitem">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 21a8 8 0 0 0-16 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  <path d="M12 13a5 5 0 1 0-5-5 5 5 0 0 0 5 5Z" stroke="currentColor" stroke-width="1.8" />
+                </svg>
+              </div>
+              <h3 class="service-card__title">Прораб</h3>
+              <p class="service-card__text">Организует работы на площадке, контролирует качество и соблюдение технологии на каждом этапе.</p>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
 
     <div data-include="components/footer.html"></div>
