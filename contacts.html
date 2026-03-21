@@ -13,6 +13,21 @@
       <div class="container">
 
         <section class="contact">
+          <div class="contact-info" aria-label="Контактная информация">
+            <h2 class="contact__title">Контакты</h2>
+            <ul class="contact-info__list">
+              <li>
+                Телефон:
+                <a href="tel:+78431234567">+7 (843) 123-45-67</a>
+              </li>
+              <li>
+                Email:
+                <a href="mailto:info@tatarstroy.ru">info@tatarstroy.ru</a>
+              </li>
+              <li>Адрес: г. Казань, ул. Примерная, д. 10</li>
+            </ul>
+          </div>
+
           <h2 class="contact__title">Форма обратной связи</h2>
 
           <form id="contactForm" class="contact-form" novalidate>
@@ -49,6 +64,29 @@
                 <div
                   class="contact-form__error"
                   id="contactPhoneError"
+                  aria-live="polite"
+                ></div>
+              </label>
+
+              <label class="contact-form__field contact-form__field--full">
+                <span class="contact-form__label">Тип услуги</span>
+                <select
+                  class="contact-form__input"
+                  id="contactService"
+                  name="service"
+                  required
+                >
+                  <option value="">Выберите услугу</option>
+                  <option value="house-building">Строительство домов</option>
+                  <option value="apartment-renovation">Ремонт квартир</option>
+                  <option value="commercial-construction">
+                    Коммерческое строительство
+                  </option>
+                  <option value="design">Проектирование</option>
+                </select>
+                <div
+                  class="contact-form__error"
+                  id="contactServiceError"
                   aria-live="polite"
                 ></div>
               </label>

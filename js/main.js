@@ -76,10 +76,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (form) {
     const nameInput = document.getElementById('contactName');
     const phoneInput = document.getElementById('contactPhone');
+    const serviceInput = document.getElementById('contactService');
     const messageInput = document.getElementById('contactMessage');
 
     const nameError = document.getElementById('contactNameError');
     const phoneError = document.getElementById('contactPhoneError');
+    const serviceError = document.getElementById('contactServiceError');
     const messageError = document.getElementById('contactMessageError');
 
     const statusEl = document.getElementById('contactFormStatus');
@@ -119,9 +121,26 @@ document.addEventListener('DOMContentLoaded', async () => {
       return '';
     };
 
+    const validateService = (value) => {
+      const v = String(value || '').trim();
+      if (!v) return 'Выберите тип услуги.';
+      return '';
+    };
+
+    if (serviceInput) {
+      const serviceFromQuery = new URLSearchParams(window.location.search).get('service');
+      if (serviceFromQuery) {
+        const matchingOption = serviceInput.querySelector(`option[value="${serviceFromQuery}"]`);
+        if (matchingOption) {
+          serviceInput.value = serviceFromQuery;
+        }
+      }
+    }
+
     const fields = [
       { input: nameInput, errorEl: nameError, validator: validateName },
       { input: phoneInput, errorEl: phoneError, validator: validatePhone },
+      { input: serviceInput, errorEl: serviceError, validator: validateService },
       { input: messageInput, errorEl: messageError, validator: validateMessage },
     ];
 

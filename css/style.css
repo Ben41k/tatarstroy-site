@@ -209,6 +209,11 @@ main p {
   background: rgba(245, 196, 0, 0.08);
 }
 
+.service-card--link {
+  display: block;
+  cursor: pointer;
+}
+
 .service-card__icon {
   width: 46px;
   height: 46px;
@@ -671,6 +676,34 @@ main p {
   letter-spacing: -0.02em;
 }
 
+.contact-info {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.contact-info__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.contact-info__list a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: rgba(245, 196, 0, 0.45);
+  text-underline-offset: 3px;
+}
+
+.contact-info__list a:hover {
+  color: var(--brand-yellow-2);
+}
+
 .contact-form {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.13);
@@ -711,6 +744,12 @@ main p {
   color: var(--text);
   font: inherit;
   transition: 180ms ease;
+  color-scheme: dark;
+}
+
+.contact-form__input option {
+  background-color: #121214;
+  color: var(--text);
 }
 
 .contact-form__textarea {
