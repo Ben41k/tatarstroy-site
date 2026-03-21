@@ -15,7 +15,7 @@
           <div class="hero__kicker">Строим надежно</div>
 
           <h1 class="hero__title">
-            Татарстрой<span>—</span> строительство под ключ
+            Татарстрой <span>—</span> строительство под ключ
           </h1>
 
           <p class="hero__subtitle">
@@ -51,12 +51,170 @@
     </section>
 
     <main>
-      <div class="container">
-        <p>
-          Нужен надежный подрядчик? Выберите услугу в меню или оставьте
-          заявку — мы подскажем оптимальный вариант.
-        </p>
-      </div>
+      <section class="section" aria-labelledby="home-about-heading">
+        <div class="container">
+          <div class="home-preview">
+            <div class="home-preview__header">
+              <h2 id="home-about-heading" class="services__title">О компании</h2>
+              <a class="btn btn--ghost" href="about.html">Подробнее</a>
+            </div>
+            <p class="projects__lead">
+              «Татарстрой» выполняет строительные работы под ключ: от проектирования
+              и подготовки документации до сдачи объекта и гарантийного сопровождения.
+              Мы работаем по договору, контролируем качество на каждом этапе и
+              соблюдаем согласованные сроки.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="home-projects-heading">
+        <div class="container">
+          <div class="home-preview">
+            <div class="home-preview__header">
+              <h2 id="home-projects-heading" class="services__title">
+                Проекты
+              </h2>
+              <a class="btn btn--ghost" href="projects.html">Все проекты</a>
+            </div>
+
+            <article class="project-card home-project">
+              <div class="project-card__media">
+                <img
+                  src="images/project-1.webp"
+                  alt="Один из наших проектов: строительство частного дома"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-card__body">
+                <h3 class="project-card__title">Строительство частного дома</h3>
+                <p class="project-card__text">
+                  Один из наших проектов: полный цикл работ от фундамента до
+                  подготовки под чистовую отделку.
+                </p>
+                <p class="project-card__text">
+                  Остальные реализованные объекты можно посмотреть на странице
+                  проектов.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="home-services-heading">
+        <div class="container">
+          <div class="home-preview">
+            <div class="home-preview__header">
+              <h2 id="home-services-heading" class="services__title">Услуги</h2>
+              <a class="btn btn--ghost" href="services.html">Каталог услуг</a>
+            </div>
+
+            <p class="projects__lead">
+              Компания занимается строительством домов, ремонтом квартир,
+              коммерческим строительством и проектированием. С полным каталогом
+              услуг вы можете ознакомиться на странице услуг.
+            </p>
+
+            <ul class="home-services-list" aria-label="Ключевые услуги">
+              <li class="home-services-list__item">Строительство домов под ключ</li>
+              <li class="home-services-list__item">Капитальный и косметический ремонт</li>
+              <li class="home-services-list__item">Работы на коммерческих объектах</li>
+              <li class="home-services-list__item">Проектирование и инженерные решения</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" aria-labelledby="home-contacts-heading">
+        <div class="container">
+          <div class="home-preview">
+            <div class="home-preview__header">
+              <h2 id="home-contacts-heading" class="services__title">Контакты</h2>
+              <a class="btn btn--ghost" href="contacts.html">Страница контактов</a>
+            </div>
+
+            <div class="home-contacts">
+              <p class="home-contacts__item">
+                Телефон:
+                <a href="tel:+78431234567">+7 (843) 123-45-67</a>
+              </p>
+              <p class="home-contacts__item">
+                Email:
+                <a href="mailto:info@tatarstroy.ru">info@tatarstroy.ru</a>
+              </p>
+            </div>
+
+            <h3 class="contact__title">Быстрая заявка</h3>
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="contact-form__grid">
+                <label class="contact-form__field">
+                  <span class="contact-form__label">Имя</span>
+                  <input
+                    class="contact-form__input"
+                    id="contactName"
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    required
+                    minlength="2"
+                  />
+                  <div
+                    class="contact-form__error"
+                    id="contactNameError"
+                    aria-live="polite"
+                  ></div>
+                </label>
+
+                <label class="contact-form__field">
+                  <span class="contact-form__label">Телефон</span>
+                  <input
+                    class="contact-form__input"
+                    id="contactPhone"
+                    name="phone"
+                    type="tel"
+                    autocomplete="tel"
+                    inputmode="tel"
+                    required
+                  />
+                  <div
+                    class="contact-form__error"
+                    id="contactPhoneError"
+                    aria-live="polite"
+                  ></div>
+                </label>
+
+                <label class="contact-form__field contact-form__field--full">
+                  <span class="contact-form__label">Сообщение</span>
+                  <textarea
+                    class="contact-form__textarea"
+                    id="contactMessage"
+                    name="message"
+                    rows="4"
+                    required
+                    minlength="10"
+                  ></textarea>
+                  <div
+                    class="contact-form__error"
+                    id="contactMessageError"
+                    aria-live="polite"
+                  ></div>
+                </label>
+              </div>
+
+              <div class="contact-form__footer">
+                <button class="btn btn--primary" type="submit">Отправить</button>
+                <p
+                  class="contact-form__status"
+                  id="contactFormStatus"
+                  role="status"
+                  aria-live="polite"
+                ></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
 
     <div data-include="components/footer.html"></div>

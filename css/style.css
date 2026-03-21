@@ -74,10 +74,10 @@ a {
   margin: 0 auto;
   padding: 0 20px;
 }
-/* 
+
 .section {
-  padding: clamp(36px, 5vw, 64px) 0;
-} */
+  padding: clamp(15px, 5vw, 30px) 0;
+}
 
 /* ====== Header / Navigation ====== */
 header {
@@ -86,7 +86,7 @@ header {
   z-index: 50;
   backdrop-filter: blur(10px);
   background: rgba(7, 7, 8, 0.72);
-  border-bottom: 1px solid var(--border);
+  /* border-bottom: 1px solid var(--border); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,9 +181,6 @@ main p {
 }
 
 /* ====== Services ====== */
-.services {
-  border-top: 1px solid var(--border);
-}
 
 .services__title {
   margin: 0 0 18px 0;
@@ -243,9 +240,6 @@ main p {
 }
 
 /* ====== Projects ====== */
-.projects {
-  border-top: 1px solid var(--border);
-}
 
 .projects__title {
   margin: 0 0 18px 0;
@@ -472,6 +466,76 @@ main p {
   box-shadow: 0 0 0 4px rgba(245, 196, 0, 0.12);
 }
 
+/* ====== Home page previews ====== */
+.home-preview {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
+}
+
+.home-preview__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.home-project {
+  max-width: 780px;
+}
+
+.home-services-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.home-services-list__item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: var(--muted);
+}
+
+.home-services-list__item::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--brand-yellow);
+  margin-top: 6px;
+  box-shadow: 0 0 0 4px rgba(245, 196, 0, 0.12);
+  flex: 0 0 10px;
+}
+
+.home-contacts {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.home-contacts__item {
+  margin: 0;
+  color: var(--muted);
+}
+
+.home-contacts__item a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: rgba(245, 196, 0, 0.45);
+  text-underline-offset: 3px;
+}
+
+.home-contacts__item a:hover {
+  color: var(--brand-yellow-2);
+}
+
 /* ====== Footer ====== */
 .site-footer {
   margin-top: 28px;
@@ -567,6 +631,10 @@ main p {
   }
 
   .hero__card {
+    padding: 14px;
+  }
+
+  .home-preview {
     padding: 14px;
   }
 
