@@ -78,16 +78,22 @@ document.addEventListener('DOMContentLoaded', async () => {
   const burgerBtn = header ? header.querySelector('.header__burger') : null;
 
   if (header && headerLogo && headerNav && burgerBtn) {
+    const syncHeaderOffset = () => {
+      document.documentElement.style.setProperty('--header-offset', `${header.offsetHeight}px`);
+    };
+
     const closeMenu = () => {
       header.classList.remove('header--menu-open');
       burgerBtn.setAttribute('aria-expanded', 'false');
       burgerBtn.setAttribute('aria-label', 'Открыть меню');
+      syncHeaderOffset();
     };
 
     const openMenu = () => {
       header.classList.add('header--menu-open');
       burgerBtn.setAttribute('aria-expanded', 'true');
       burgerBtn.setAttribute('aria-label', 'Закрыть меню');
+      syncHeaderOffset();
     };
 
     const updateHeaderCompactState = () => {
@@ -103,6 +109,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (fullHeaderWidth > headerWidth) {
         header.classList.add('header--compact');
       }
+
+      syncHeaderOffset();
     };
 
     burgerBtn.addEventListener('click', () => {
