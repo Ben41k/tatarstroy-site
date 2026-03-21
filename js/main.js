@@ -71,6 +71,62 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
+  // ====== Header: автоматический переход в burger-меню при нехватке ширины ======
+  const header = document.querySelector('header');
+  const headerLogo = header ? header.querySelector(':scope > a') : null;
+  const headerNav = header ? header.querySelector(':scope > nav') : null;
+  const burgerBtn = header ? header.querySelector('.header__burger') : null;
+
+  if (header && headerLogo && headerNav && burgerBtn) {
+    const closeMenu = () => {
+      header.classList.remove('header--menu-open');
+      burgerBtn.setAttribute('aria-expanded', 'false');
+      burgerBtn.setAttribute('aria-label', 'Открыть меню');
+    };
+
+    const openMenu = () => {
+      header.classList.add('header--menu-open');
+      burgerBtn.setAttribute('aria-expanded', 'true');
+      burgerBtn.setAttribute('aria-label', 'Закрыть меню');
+    };
+
+    const updateHeaderCompactState = () => {
+      // Временное отключение compact-режима нужно, чтобы корректно измерить
+      // реальную ширину полного меню и решить, помещается ли оно.
+      header.classList.remove('header--compact', 'header--menu-open');
+      burgerBtn.setAttribute('aria-expanded', 'false');
+      burgerBtn.setAttribute('aria-label', 'Открыть меню');
+
+      const headerWidth = header.clientWidth;
+      const fullHeaderWidth = headerLogo.scrollWidth + headerNav.scrollWidth + 56;
+
+      if (fullHeaderWidth > headerWidth) {
+        header.classList.add('header--compact');
+      }
+    };
+
+    burgerBtn.addEventListener('click', () => {
+      if (header.classList.contains('header--menu-open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    headerNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
+    });
+
+    window.addEventListener('resize', updateHeaderCompactState);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    updateHeaderCompactState();
+  }
+
   // ====== Contact form (валидация) ======
   const form = document.getElementById('contactForm');
   if (form) {

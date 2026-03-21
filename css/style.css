@@ -86,7 +86,6 @@ header {
   z-index: 50;
   backdrop-filter: blur(10px);
   background: rgba(7, 7, 8, 0.72);
-  /* border-bottom: 1px solid var(--border); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -161,6 +160,75 @@ nav a[aria-current="page"] {
   color: var(--brand-white);
   background: rgba(245, 196, 0, 0.14);
   border-color: rgba(245, 196, 0, 0.45);
+}
+
+.header__burger {
+  display: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  width: 46px;
+  height: 42px;
+  padding: 9px 10px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.header__burger-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--text);
+}
+
+header.header--compact {
+  justify-content: space-between;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 12px 20px;
+}
+
+header.header--compact > a {
+  position: static;
+  transform: none;
+  left: auto;
+  top: auto;
+  padding: 10px 0;
+}
+
+header.header--compact .header__burger {
+  display: inline-flex;
+}
+
+header.header--compact nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(7, 7, 8, 0.96);
+  border-top: 1px solid var(--border);
+  padding: 12px 20px 16px;
+}
+
+header.header--compact nav > ul {
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+header.header--compact nav a {
+  width: 100%;
+  justify-content: center;
+}
+
+header.header--compact.header--menu-open nav {
+  display: flex;
 }
 
 /* ====== Главный контент (и текущая разметка страниц) ====== */
@@ -627,11 +695,11 @@ main p {
     padding: 14px 16px;
   }
 
-  nav > ul {
+  header:not(.header--compact) nav > ul {
     gap: 10px;
   }
 
-  nav a {
+  header:not(.header--compact) nav a {
     padding: 9px 10px;
   }
 
@@ -666,7 +734,6 @@ main p {
 
 /* ====== Contact (Feedback form) ====== */
 .contact {
-  /* border-top: 1px solid var(--border); */
   padding-top: 26px;
 }
 

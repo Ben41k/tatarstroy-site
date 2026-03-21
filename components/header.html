@@ -3,7 +3,19 @@
     <strong>Татарстрой</strong>
   </a>
 
-  <nav aria-label="Основное меню">
+  <button
+    type="button"
+    class="header__burger"
+    aria-label="Открыть меню"
+    aria-expanded="false"
+    aria-controls="site-nav"
+  >
+    <span class="header__burger-line" aria-hidden="true"></span>
+    <span class="header__burger-line" aria-hidden="true"></span>
+    <span class="header__burger-line" aria-hidden="true"></span>
+  </button>
+
+  <nav id="site-nav" aria-label="Основное меню">
     <ul>
       <li><a href="index.html">Главная</a></li>
       <li><a href="services.html">Услуги</a></li>
